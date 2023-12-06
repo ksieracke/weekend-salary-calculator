@@ -17,6 +17,7 @@ function handleSubmitForm(event){
             <td>${idVal.value}</td>
             <td>${titleVal.value}</td>
             <td>${annualSalaryVal.value}</td>
+            <td><button onclick="deleteRow(event)">Delete</button></td>
         </tr>
         `
     firstNameVal.value='';
@@ -24,4 +25,18 @@ function handleSubmitForm(event){
     idVal.value='';
     titleVal.value='';
     annualSalaryVal.value='';
+}
+
+function deleteRow (event) {
+    console.log('delete row');
+    console.log(event.target.parentNode.parentNode.rowIndex);
+    let del=event.target.parentNode.parentNode.rowIndex
+    let table=document.querySelector("#employees");
+    table.deleteRow(del);
+    event.preventDefault();
+
+}
+
+function getTotalCost(){
+
 }

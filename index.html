@@ -11,10 +11,33 @@
   </header>
   <main>
     <h2>Add Employee</h2>
+      <form onsubmit="handleSubmitForm(event)">
+        <input data-testid="firstNameInput" id="firstName" type="text" placeholder="First Name" required>
+        <input data-testid="lastNameInput" id="lastName" type="text" placeholder="Last Name" required>
+        <input data-testid="idInput" type="text" id="ID" placeholder="ID" required>
+        <input data-testid="titleInput" type="text" id="title" placeholder="Title" required>
+        <input data-testid="annualSalaryInput" type="text" id="annualSalary" placeholder="Annual Salary" required>
+        <button data-testid="submitButton" type="submit">Submit</button>
+      </form>
     <h2>Employees</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTable">
+
+        </tbody>
+      </table>
   </main>
   <footer>
     <p>Total Monthly</p>
   </footer>
+  <script src="scripts/client.js"></script>
 </body>
 </html>

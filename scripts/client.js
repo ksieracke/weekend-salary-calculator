@@ -17,7 +17,7 @@ function handleSubmitForm(event){
             <td>${idVal.value}</td>
             <td>${titleVal.value}</td>
             <td>${annualSalaryVal.value}</td>
-            <td><button onclick="deleteRow(event)">Delete</button></td>
+            <td><button onclick="deleteRow(event); getTotalCost(event)">Delete</button></td>
         </tr>
         `
     firstNameVal.value='';
@@ -37,6 +37,15 @@ function deleteRow (event) {
 
 }
 
-function getTotalCost(){
+function getTotalCost(event){
+    
+    let table=document.querySelector('#employees');
+    let total=0;
+    for(let i=1; i<table.rows.length;i++){
+        let sal=table.rows[i].cells[4].innerHTML;
+        total+=Number(sal);
+    }
+    let pcost=document.querySelector('#total-cost');
+    pcost.innerHTML=`Total Monthly: ${total}`;
 
 }

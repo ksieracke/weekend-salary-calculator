@@ -17,7 +17,7 @@ function handleSubmitForm(event){
             <td>${idVal.value}</td>
             <td>${titleVal.value}</td>
             <td>${annualSalaryVal.value}</td>
-            <td><button onclick="deleteRow(event); getTotalCost(event)">Delete</button></td>
+            <td><button onclick="deleteRow(event); getTotalCost(event); checkOverBudget(event)">Delete</button></td>
         </tr>
         `
     firstNameVal.value='';
@@ -37,15 +37,28 @@ function deleteRow (event) {
 
 }
 
+
 function getTotalCost(event){
-    
+    let total=0; 
     let table=document.querySelector('#employees');
-    let total=0;
+    
     for(let i=1; i<table.rows.length;i++){
         let sal=table.rows[i].cells[4].innerHTML;
         total+=Number(sal);
     }
     let pcost=document.querySelector('#total-cost');
-    pcost.innerHTML=`Total Monthly: ${total}`;
+    pcost.innerHTML=`${total}`;
+    event.preventDefault();
+}
 
+function checkOverBudget(event){
+    let total=document.getElementById("total-cost").innerHTML;
+    let footer=document.getElementById('footer');
+    console.log(total);
+    if(Number(total)>20000){
+        footer.classList="over-budget";
+    }
+    else{
+        footer.classList="under-budget";
+    }
 }

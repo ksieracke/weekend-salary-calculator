@@ -11,12 +11,12 @@
   </header>
   <main>
     <h2>Add Employee</h2>
-      <form onsubmit="handleSubmitForm(event); getTotalCost(event)">
+      <form onsubmit="handleSubmitForm(event); getTotalCost(event); checkOverBudget(event)">
         <input data-testid="firstNameInput" id="firstName" type="text" placeholder="First Name" required>
         <input data-testid="lastNameInput" id="lastName" type="text" placeholder="Last Name" required>
-        <input data-testid="idInput" type="number" id="ID" placeholder="ID" required>
+        <input data-testid="idInput" id="ID" type="text" placeholder="ID" required>
         <input data-testid="titleInput" type="text" id="title" placeholder="Title" required>
-        <input data-testid="annualSalaryInput" type="number" id="annualSalary" placeholder="Annual Salary" required>
+        <input data-testid="annualSalaryInput" type="text" id="annualSalary" placeholder="Annual Salary" required>
         <button data-testid="submitButton" type="submit">Submit</button>
       </form>
     <h2>Employees</h2>
@@ -35,9 +35,10 @@
         </tbody>
       </table>
   </main>
-  <footer>
-    <p id="total-cost">Total Monthly: </p>
+  <footer id="footer" class="under-budget">
+    <p>Total Monthly: </p>
+    <p id="total-cost"> </p>
   </footer>
-  <script src="scripts/client.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

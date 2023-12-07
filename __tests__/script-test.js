@@ -9,8 +9,8 @@ const { JSDOM } = require('jsdom')
 const fs = require('fs')
 const path = require('path')
 
-const htmlFile = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf8')
-const jsFile = fs.readFileSync(path.resolve(__dirname, '../script.js'), 'utf8')
+const htmlFile = fs.readFileSync(path.resolve(__dirname, '../server/public/index.html'), 'utf8')
+const jsFile = fs.readFileSync(path.resolve(__dirname, '../server/public/scripts/script.js'), 'utf8')
 
 
 let dom

@@ -47,7 +47,7 @@ function getTotalCost(event){
         total+=Number(sal);
     }
     let pcost=document.querySelector('#total-cost');
-    pcost.innerHTML=`${total}`;
+    pcost.innerHTML=`${(total/12).toFixed(2)}`;
     event.preventDefault();
 }
 
